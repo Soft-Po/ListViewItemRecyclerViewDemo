@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     //修复Bug
+
+    //clone下来进行修改
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
