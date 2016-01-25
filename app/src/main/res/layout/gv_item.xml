@@ -5,7 +5,9 @@
 
     <ImageView
         android:id="@+id/gv_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="120dip"
+        android:layout_height="120dip"
+        android:background="#8800"
+        />
 
 </LinearLayout>

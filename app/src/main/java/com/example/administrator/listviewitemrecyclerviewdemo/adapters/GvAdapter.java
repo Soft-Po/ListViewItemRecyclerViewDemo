@@ -55,6 +55,7 @@ public class GvAdapter extends BaseAdapter {
             ret.setTag(holder);
         }
 
+        holder.gv_image.setScaleType(ImageView.ScaleType.FIT_XY);
         holder.gv_image.setImageResource(R.mipmap.ic_launcher);
         return ret;
     }

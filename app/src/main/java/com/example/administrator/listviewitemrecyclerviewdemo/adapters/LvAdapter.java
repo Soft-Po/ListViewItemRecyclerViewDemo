@@ -83,7 +83,7 @@ public class LvAdapter extends BaseAdapter {
 
             holder.item_image = ((ImageView) ret.findViewById(R.id.item_image));
 
-//            holder.item_recyclerView = ((RecyclerView) ret.findViewById(R.id.item_recyclerView));
+            holder.item_recyclerView = ((RecyclerView) ret.findViewById(R.id.item_recyclerView));
 
             holder.item_gridView = ((GridView) ret.findViewById(R.id.item_gridView));
 
@@ -94,40 +94,40 @@ public class LvAdapter extends BaseAdapter {
         imageLoader.displayImage(list.get(position),holder.item_image,options);
 
         //对recyclerView进行设置
-//        LinearLayoutManager layout = new LinearLayoutManager(context);
+        LinearLayoutManager layout = new LinearLayoutManager(context);
 
-//        layout.setOrientation(LinearLayoutManager.HORIZONTAL);
+        layout.setOrientation(LinearLayoutManager.HORIZONTAL);
 
-//        holder.item_recyclerView.setLayoutManager(layout);
+        holder.item_recyclerView.setLayoutManager(layout);
 
-//        RvAdapter adapter = new RvAdapter(context);
-//        holder.item_recyclerView.setAdapter(adapter);
+        RvAdapter adapter = new RvAdapter(context);
+        holder.item_recyclerView.setAdapter(adapter);
 
-        GvAdapter adapter = new GvAdapter(context);
-
-        int count = adapter.getCount();
-
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(count*(120+10), LinearLayout.LayoutParams.WRAP_CONTENT);
-
-        holder.item_gridView.setLayoutParams(params);
-
-        holder.item_gridView.setColumnWidth(cWidth);
-
-        holder.item_gridView.setHorizontalSpacing(hSpacing);
-
-        holder.item_gridView.setNumColumns(count);
-
-        holder.item_gridView.setStretchMode(GridView.NO_STRETCH);
-
-        holder.item_gridView.setAdapter(adapter);
-
-        final int p = position;
-        holder.item_gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("flag","------------------>点击了： "+ p+",   "+position);
-            }
-        });
+//        GvAdapter adapter = new GvAdapter(context);
+//
+//        int count = adapter.getCount();
+//
+//        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(count*(120+10), LinearLayout.LayoutParams.WRAP_CONTENT);
+//
+//        holder.item_gridView.setLayoutParams(params);
+//
+//        holder.item_gridView.setColumnWidth(cWidth);
+//
+//        holder.item_gridView.setHorizontalSpacing(hSpacing);
+//
+//        holder.item_gridView.setNumColumns(count);
+//
+//        holder.item_gridView.setStretchMode(GridView.NO_STRETCH);
+//
+//        holder.item_gridView.setAdapter(adapter);
+//
+//        final int p = position;
+//        holder.item_gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Log.d("flag","------------------>点击了： "+ p+",   "+position);
+//            }
+//        });
 
         return ret;
     }
